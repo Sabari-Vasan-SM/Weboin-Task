@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Weboin — Digital Marketing Agency (Next.js + TypeScript)
 
-## Getting Started
+A clean, modern marketing landing site built with Next.js 13 (App Router) and TypeScript.
 
-First, run the development server:
+This repo is a compact starter/demo for agency websites. It includes a responsive layout, theme toggle, and a fullscreen loading animation that displays while the app hydrates.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Highlights
+
+- Next.js 13 (App Router)
+- TypeScript
+- Small, accessible components (navbar, footer, theme toggle)
+- Fullscreen loader animation integrated into the root layout
+
+## Quick start
+
+Prerequisites: Node.js (16.8+), npm or pnpm.
+
+Install dependencies:
+
+```powershell
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Build for production:
 
-## Learn More
+```powershell
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+Type-check the project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```powershell
+npx tsc --noEmit
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project structure
 
-## Deploy on Vercel
+- `src/app/` - Next.js app directory (routing, global styles)
+  - `layout.tsx` - root layout where the loader is integrated
+  - `globals.css` - global styles including loader CSS
+- `src/components/` - shared components (navbar, footer, theme toggle, loader)
+- `src/components/sections/` - page sections used on the landing page
+- `src/lib/` - utility functions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Loader behavior
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+On initial page load a small client-side loader shows and fades out after the window `load` event or a short timeout. Styles live in `src/app/globals.css` and the component is in `src/components/loader.tsx`.
+
+## Contributing
+
+- Keep components small and focused.
+- Use client components only when you need browser APIs or hooks ("use client").
+- Add tests for logic-heavy utilities in `src/lib/`.
+
+## License
+
+Provided as-is for demo purposes.
+
+---
+
+_If you'd like, I can add a small `README` section documenting the loader implementation and how to tweak timings or replace the spinner with a branded animation._
