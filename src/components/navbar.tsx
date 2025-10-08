@@ -48,7 +48,7 @@ export function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
+              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center transition-transform duration-300 hover:scale-105">
                 <span className="text-primary-foreground font-bold text-lg">D</span>
               </div>
               <span className="font-heading text-xl font-semibold">
@@ -65,9 +65,10 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleHashNavigation(e, item.href)}
-                  className="text-foreground/80 hover:text-foreground px-3 py-2 text-sm font-medium transition-colors duration-200 hover:bg-accent hover:rounded-md"
+                  className="group relative text-foreground/80 px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
-                  {item.name}
+                  <span className="relative z-10">{item.name}</span>
+                  <span className="absolute left-3 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-[calc(100%-1.5rem)]" />
                 </Link>
               ))}
             </div>
@@ -76,7 +77,7 @@ export function Navbar() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
-            <Button className="gradient-bg hover:opacity-90 transition-opacity">
+            <Button className="gradient-bg hover:opacity-90 transition-opacity transform hover:-translate-y-0.5 hover:scale-105">
               Get Started
             </Button>
           </div>
@@ -87,7 +88,11 @@ export function Navbar() {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="h-9 w-9">
-                  <Menu className="h-4 w-4" />
+                  {isOpen ? (
+                    <X className="h-4 w-4 transform transition-transform duration-200" />
+                  ) : (
+                    <Menu className="h-4 w-4 transform transition-transform duration-200" />
+                  )}
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
@@ -98,9 +103,10 @@ export function Navbar() {
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleHashNavigation(e, item.href)}
-                      className="text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors duration-200"
+                      className="group relative text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors duration-200"
                     >
-                      {item.name}
+                      <span className="relative z-10">{item.name}</span>
+                      <span className="absolute left-3 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-[calc(100%-1.5rem)]" />
                     </Link>
                   ))}
                   <div className="pt-4 border-t">
