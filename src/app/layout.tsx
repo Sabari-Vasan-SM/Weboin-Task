@@ -20,7 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Agency | Professional Marketing Solutions",
+  title: "DigitalPro",
   description: "Transform your business with our comprehensive digital marketing services. SEO, Paid Ads, Social Media, and Branding solutions.",
   icons: {
     icon: "/d-icon.svg",

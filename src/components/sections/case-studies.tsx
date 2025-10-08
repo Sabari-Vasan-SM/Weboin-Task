@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowUpRight, TrendingUp } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 
 const caseStudies = [
@@ -15,7 +15,7 @@ const caseStudies = [
       { metric: "Organic Traffic", value: "+180%" },
       { metric: "Conversion Rate", value: "+45%" },
     ],
-    image: "/api/placeholder/400/300",
+    image: "https://www.grandviewresearch.com/static/img/research/e-commerce-market.webp",
     color: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
   },
   {
@@ -29,7 +29,7 @@ const caseStudies = [
       { metric: "Cost per Lead", value: "-60%" },
       { metric: "Demo Requests", value: "+320%" },
     ],
-    image: "/api/placeholder/400/300",
+    image: "https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/67b43175bc9d6ead9148d9bd_612e2a5b3712bbce58c07973_What%2520is%2520SaaS.png",
     color: "bg-green-500/10 text-green-600 dark:text-green-400",
   },
   {
@@ -43,7 +43,7 @@ const caseStudies = [
       { metric: "Store Visits", value: "+85%" },
       { metric: "Online Orders", value: "+150%" },
     ],
-    image: "/api/placeholder/400/300",
+    image: "https://www.vizion.com/wp-content/smush-webp/2017/11/google-local-business.png.webp",
     color: "bg-purple-500/10 text-purple-600 dark:text-purple-400",
   },
 ]
@@ -77,14 +77,14 @@ export function CaseStudies() {
             >
               {/* Image Placeholder */}
               <div className="relative h-48 bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <TrendingUp className="w-12 h-12 text-primary/60 mx-auto mb-2" />
-                    <div className="text-sm text-muted-foreground">{study.category} Project</div>
-                  </div>
-                </div>
+                <img
+                  src={study.image}
+                  alt={`${study.category} Project`}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                {/* overlay removed to show clean image */}
                 <div className="absolute top-4 right-4">
-                  <ArrowUpRight className="w-5 h-5 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all" />
+                  <ArrowUpRight className="w-5 h-5 text-white/90 group-hover:text-white group-hover:scale-110 transition-all" />
                 </div>
               </div>
 
