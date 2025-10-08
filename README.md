@@ -52,28 +52,7 @@ npx tsc --noEmit
 
 Explore the deployed versions to experience the responsive design, animations, and overall feel of the agency landing page 🚀  
 
----
 
-## 🗂️ **Project Structure**
-
-```
-src/
- ├─ app/                → Next.js App Router + Global Styles
- │   ├─ layout.tsx      → Root layout with integrated loader
- │   └─ globals.css     → Global + Loader CSS
- │
- ├─ components/         → Reusable UI components
- │   ├─ navbar.tsx
- │   ├─ footer.tsx
- │   ├─ theme-toggle.tsx
- │   └─ loader.tsx
- │
- ├─ components/sections/ → Homepage sections (Hero, Services, About, Contact)
- │
- └─ lib/                → Utility functions
-```
-
----
 
 ## 💡 **Why You’ll Love It**
 
