@@ -1,68 +1,90 @@
-# Weboin — Digital Marketing Agency (Next.js + TypeScript)
+# 🚀 **Digital Marketing Agency (Next.js)**  
 
-A clean, modern marketing landing site built with Next.js 13 (App Router) and TypeScript.
+A **clean, modern & responsive** digital marketing landing page built with **Next.js 13 (App Router)** and **TypeScript** 💻✨  
 
-This repo is a compact starter/demo for agency websites. It includes a responsive layout, theme toggle, and a fullscreen loading animation that displays while the app hydrates.
+This project serves as a **starter/demo** for agency websites — featuring smooth animations, a theme toggle 🌗, and a fullscreen loader ⚡ for a polished user experience.  
 
-## Highlights
+---
 
-- Next.js 13 (App Router)
-- TypeScript
-- Small, accessible components (navbar, footer, theme toggle)
-- Fullscreen loader animation integrated into the root layout
+## 🌟 **Highlights**
 
-## Quick start
+✅ Built with **Next.js 13 (App Router)**  
+✅ Fully typed with **TypeScript**  
+✅ Responsive, **accessible layout**  
+✅ **Theme toggle** (light 🌞 / dark 🌙 mode)  
+✅ **Fullscreen loader animation** integrated in root layout  
+✅ **Reusable components** – Navbar, Footer, Loader, and more  
 
-Prerequisites: Node.js (16.8+), npm or pnpm.
+---
 
-Install dependencies:
+## ⚡ **Quick Start**
 
-```powershell
+> Make sure you have **Node.js (v16.8+)** and **npm / pnpm** installed 🧩  
+
+### 📦 Install dependencies  
+```bash
 npm install
 ```
 
-Run development server:
-
-```powershell
+### 💻 Run development server  
+```bash
 npm run dev
 ```
+👉 Visit [http://localhost:3000](http://localhost:3000)
 
-Build for production:
-
-```powershell
+### 🏗️ Build for production  
+```bash
 npm run build
 npm run start
 ```
 
-Type-check the project:
-
-```powershell
+### 🔍 Type-check the project  
+```bash
 npx tsc --noEmit
 ```
 
-## Project structure
+---
 
-- `src/app/` - Next.js app directory (routing, global styles)
-  - `layout.tsx` - root layout where the loader is integrated
-  - `globals.css` - global styles including loader CSS
-- `src/components/` - shared components (navbar, footer, theme toggle, loader)
-- `src/components/sections/` - page sections used on the landing page
-- `src/lib/` - utility functions
+## 🗂️ **Project Structure**
 
-## Loader behavior
-
-On initial page load a small client-side loader shows and fades out after the window `load` event or a short timeout. Styles live in `src/app/globals.css` and the component is in `src/components/loader.tsx`.
-
-## Contributing
-
-- Keep components small and focused.
-- Use client components only when you need browser APIs or hooks ("use client").
-- Add tests for logic-heavy utilities in `src/lib/`.
-
-## License
-
-Provided as-is for demo purposes.
+```
+src/
+ ├─ app/                → Next.js App Router + Global Styles
+ │   ├─ layout.tsx      → Root layout with integrated loader
+ │   └─ globals.css     → Global + Loader CSS
+ │
+ ├─ components/         → Reusable UI components
+ │   ├─ navbar.tsx
+ │   ├─ footer.tsx
+ │   ├─ theme-toggle.tsx
+ │   └─ loader.tsx
+ │
+ ├─ components/sections/ → Homepage sections (Hero, Services, About, Contact)
+ │
+ └─ lib/                → Utility functions
+```
 
 ---
 
-_If you'd like, I can add a small `README` section documenting the loader implementation and how to tweak timings or replace the spinner with a branded animation._
+## 💡 **Why You’ll Love It**
+
+✨ Minimal, yet powerful architecture  
+🎨 Designed for **modern agencies & freelancers**  
+📱 Mobile-first & responsive design  
+🧠 Perfect for learning or bootstrapping client projects  
+
+---
+
+## 🌐 **Tech Stack**
+
+| 🧰 Tool | ⚙️ Purpose |
+|----------|-------------|
+| **Next.js 13** | App router, page structure |
+| **TypeScript** | Type safety and scalability |
+| **TailwindCSS / shadcn/ui** | Beautiful, responsive UI |
+| **Framer Motion** | Smooth animations & transitions |
+
+---
+
+## ❤️ **Made with passion**  
+Designed for creative developers who want a **stunning, professional agency site** that’s easy to customize and extend ✨  
