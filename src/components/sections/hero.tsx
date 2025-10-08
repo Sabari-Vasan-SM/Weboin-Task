@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play } from "lucide-react"
 
@@ -23,13 +24,15 @@ export function Hero() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                className="gradient-bg hover:opacity-90 transition-opacity text-white group"
-              >
-                Get Started Today
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <Link href="/#contact" className="group">
+                <Button 
+                  size="lg" 
+                  className="gradient-bg hover:opacity-90 transition-opacity text-white group"
+                >
+                  Get Started Today
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
               <Button 
                 variant="outline" 
                 size="lg"
