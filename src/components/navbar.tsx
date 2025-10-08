@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -16,6 +17,29 @@ const navigation = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
+
+  // Handles clicks for in-page anchors like #services or #contact.
+  // If we're already on the homepage, scroll smoothly. Otherwise navigate
+  // to the homepage with the hash so Next.js will land on the section.
+  const handleHashNavigation = (e: React.MouseEvent, href: string) => {
+    // Only handle hash links (start with '#')
+    if (!href.startsWith("#")) return
+    e.preventDefault()
+    setIsOpen(false)
+    const hash = href
+    // If already on home, use DOM scroll
+    if (pathname === "/") {
+      const el = document.querySelector(hash)
+      if (el) {
+        ;(el as HTMLElement).scrollIntoView({ behavior: "smooth" })
+      }
+    } else {
+      // Navigate to home with hash
+      router.push(`/${hash}`)
+    }
+  }
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -40,6 +64,7 @@ export function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => handleHashNavigation(e, item.href)}
                   className="text-foreground/80 hover:text-foreground px-3 py-2 text-sm font-medium transition-colors duration-200 hover:bg-accent hover:rounded-md"
                 >
                   {item.name}
@@ -72,8 +97,8 @@ export function Navbar() {
                     <Link
                       key={item.name}
                       href={item.href}
+                      onClick={(e) => handleHashNavigation(e, item.href)}
                       className="text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors duration-200"
-                      onClick={() => setIsOpen(false)}
                     >
                       {item.name}
                     </Link>
