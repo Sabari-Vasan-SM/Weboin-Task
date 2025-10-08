@@ -124,10 +124,23 @@ export function Services() {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {services.map((service, index) => (
-            <ServiceCard key={service.title} service={service} />
+        {/* Services Grid - swipeable on mobile, grid on md+ */}
+        <div
+          className="
+            flex gap-4 overflow-x-auto snap-x snap-mandatory px-4 -mx-4 md:mx-0 md:px-0
+            md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6 lg:gap-8
+          "
+          role="list"
+          aria-label="Our services"
+        >
+          {services.map((service) => (
+            <div
+              key={service.title}
+              role="listitem"
+              className="snap-start min-w-[80%] sm:min-w-[60%] md:min-w-0 md:snap-auto"
+            >
+              <ServiceCard service={service} />
+            </div>
           ))}
         </div>
 

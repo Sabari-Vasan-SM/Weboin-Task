@@ -84,29 +84,36 @@ export function Navbar() {
             <ThemeToggle />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="h-9 w-9">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-10 w-10 p-2"
+                  aria-expanded={isOpen}
+                  aria-label={isOpen ? "Close menu" : "Open menu"}
+                >
                   {isOpen ? (
-                    <X className="h-4 w-4 transform transition-transform duration-200" />
+                    <X className="h-5 w-5 transform transition-transform duration-200" />
                   ) : (
-                    <Menu className="h-4 w-4 transform transition-transform duration-200" />
+                    <Menu className="h-5 w-5 transform transition-transform duration-200" />
                   )}
-                  <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <div className="flex flex-col space-y-4 mt-8">
+              <SheetContent
+                side="right"
+                className="fixed inset-0 sm:inset-auto sm:right-0 sm:h-full w-full sm:w-[300px] sm:rounded-l-2xl sm:shadow-xl bg-background p-6 overflow-auto"
+              >
+                <div className="flex flex-col space-y-6 mt-6">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleHashNavigation(e, item.href)}
-                      className="group relative text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors duration-200"
+                      className="group relative text-foreground hover:text-primary px-4 py-4 text-lg font-medium transition-colors duration-150 rounded-lg"
                     >
                       <span className="relative z-10">{item.name}</span>
-                      <span className="absolute left-3 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-[calc(100%-1.5rem)]" />
                     </Link>
                   ))}
-                  <div className="pt-4 border-t" />
+                  <div className="pt-6 border-t" />
                 </div>
               </SheetContent>
             </Sheet>
