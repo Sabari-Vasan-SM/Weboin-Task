@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Target, Eye, Heart, Award } from "lucide-react"
+import { Team } from "./team"
 
 const values = [
   {
@@ -93,6 +94,11 @@ export function AgencyIntro() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Inline Team Section immediately after Our Story */}
+        <div className="mt-12">
+          <Team />
         </div>
 
         {/* Mission, Vision, Values */}

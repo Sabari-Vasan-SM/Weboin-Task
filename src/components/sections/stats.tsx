@@ -4,23 +4,23 @@ import { TrendingUp, Users, Award, Calendar } from "lucide-react"
 const stats = [
   {
     icon: Users,
-    number: "500+",
-    label: "Happy Clients",
-    description: "Businesses we've helped grow",
+    number: "20+",
+    label: "Clients",
+    description: "Satisfied clients served",
     color: "text-blue-600 dark:text-blue-400",
   },
   {
     icon: TrendingUp,
-    number: "1000+",
-    label: "Projects Completed",
-    description: "Successful campaigns delivered",
+    number: "50+",
+    label: "Projects",
+    description: "Campaigns & projects delivered",
     color: "text-green-600 dark:text-green-400",
   },
   {
     icon: Calendar,
     number: "5+",
-    label: "Years Experience",
-    description: "In digital marketing excellence",
+    label: "Years",
+    description: "Years in business",
     color: "text-purple-600 dark:text-purple-400",
   },
   {
@@ -41,7 +41,26 @@ const achievements = [
   { metric: "Social Media Engagement", value: "400%" },
 ]
 
-export function Stats() {
+export function Stats({ loading = false }: { loading?: boolean }) {
+  if (loading) {
+    return (
+      <section className="py-16 sm:py-24 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div key={i} className="text-center p-8 rounded-2xl bg-background/50 backdrop-blur-sm border border-border">
+                <div className="h-10 w-10 rounded bg-muted/30 mx-auto mb-4 animate-pulse" />
+                <div className="h-10 bg-muted/30 rounded mb-2 w-1/3 mx-auto animate-pulse" />
+                <div className="h-6 bg-muted/20 rounded mb-2 w-1/4 mx-auto animate-pulse" />
+                <div className="h-4 bg-muted/20 rounded w-3/5 mx-auto animate-pulse" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section className="py-16 sm:py-24 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

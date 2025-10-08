@@ -84,7 +84,27 @@ const teamMembers = [
   },
 ]
 
-export function Team() {
+export function Team({ loading = false }: { loading?: boolean }) {
+  if (loading) {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div key={i} className="p-6 bg-card rounded-xl">
+            <div className="flex items-center justify-center mb-4">
+              <div className="w-36 h-36 rounded-full bg-muted/40 animate-pulse" />
+            </div>
+            <div className="h-6 bg-muted/30 rounded mb-2 w-3/5 mx-auto animate-pulse" />
+            <div className="h-4 bg-muted/20 rounded mb-4 w-2/5 mx-auto animate-pulse" />
+            <div className="space-y-2">
+              <div className="h-3 bg-muted/20 rounded w-full animate-pulse" />
+              <div className="h-3 bg-muted/20 rounded w-full animate-pulse" />
+            </div>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
   return (
     <section id="team" className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,66 +126,37 @@ export function Team() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {teamMembers.map((member) => (
-            <Card key={member.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+            <Card key={member.id} className="overflow-hidden border border-border hover:shadow-lg transition-all duration-200">
               {/* Member Photo */}
-              <div className="relative h-64 bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Avatar className="w-32 h-32">
-                    <AvatarImage src={member.image} alt={member.name} />
-                    <AvatarFallback className="bg-primary/10 text-primary font-semibold text-2xl">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </AvatarFallback>
-                  </Avatar>
-                </div>
-                
-                {/* Social Links Overlay */}
-                <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="flex space-x-4">
-                    <a
-                      href={member.social.linkedin}
-                      className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors"
-                      aria-label={`${member.name} LinkedIn`}
-                    >
-                      <Linkedin className="w-5 h-5 text-white" />
-                    </a>
-                    <a
-                      href={member.social.twitter}
-                      className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors"
-                      aria-label={`${member.name} Twitter`}
-                    >
-                      <Twitter className="w-5 h-5 text-white" />
-                    </a>
-                    <a
-                      href={`mailto:${member.social.email}`}
-                      className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors"
-                      aria-label={`Email ${member.name}`}
-                    >
-                      <Mail className="w-5 h-5 text-white" />
-                    </a>
-                  </div>
-                </div>
+              <div className="flex items-center justify-center bg-background p-6">
+                <Avatar className="w-36 h-36 ring-4 ring-background/50">
+                  <AvatarImage src={member.image} alt={member.name} />
+                  <AvatarFallback className="bg-primary/10 text-primary font-semibold text-3xl">
+                    {member.name.split(' ').map(n => n[0]).join('')}
+                  </AvatarFallback>
+                </Avatar>
               </div>
 
               <CardContent className="p-6">
                 {/* Name & Role */}
-                <div className="text-center mb-4">
-                  <h3 className="text-xl font-semibold text-foreground mb-1">
+                <div className="text-center mb-3">
+                  <h3 className="text-2xl font-bold text-foreground mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-primary font-medium">
+                  <p className="text-accent font-medium">
                     {member.role}
                   </p>
                 </div>
 
-                {/* Bio */}
+                {/* Bio (shortened for clarity) */}
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {member.bio}
+                  {member.bio.slice(0, 160)}{member.bio.length > 160 ? '...' : ''}
                 </p>
 
                 {/* Expertise Tags */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {member.expertise.map((skill) => (
                     <Badge key={skill} variant="secondary" className="text-xs">
                       {skill}
