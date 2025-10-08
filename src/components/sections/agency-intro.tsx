@@ -62,13 +62,13 @@ export function AgencyIntro() {
                 the evolving digital landscape.
               </p>
               <p className="leading-relaxed">
-                Starting with just three team members and a handful of clients, we've grown into a 
+                Starting with just three team members and a handful of clients, we&apos;ve grown into a 
                 full-service digital marketing agency serving over 500 businesses worldwide. Our 
                 growth is a testament to our commitment to delivering measurable results and 
                 exceptional client experiences.
               </p>
               <p className="leading-relaxed">
-                Today, we're proud to be a trusted partner for businesses ranging from startups 
+                Today, we&apos;re proud to be a trusted partner for businesses ranging from startups 
                 to Fortune 500 companies, helping them navigate the complex digital landscape 
                 and achieve remarkable growth.
               </p>

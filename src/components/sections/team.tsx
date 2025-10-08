@@ -100,7 +100,7 @@ export function Team() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Our diverse team of digital marketing experts brings together decades of experience 
-            across all aspects of digital marketing. We're passionate about driving results 
+            across all aspects of digital marketing. We&apos;re passionate about driving results 
             and helping your business thrive.
           </p>
         </div>
@@ -191,7 +191,7 @@ export function Team() {
                   and a shared passion for helping our clients succeed.
                 </p>
                 <p className="leading-relaxed">
-                  We invest heavily in our team's professional development, attend industry 
+                  We invest heavily in our team&apos;s professional development, attend industry 
                   conferences, and stay at the forefront of digital marketing trends and 
                   technologies. This ensures our clients always benefit from the latest 
                   strategies and best practices.
@@ -249,7 +249,7 @@ export function Team() {
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Continuous Learning</h4>
                   <p className="text-muted-foreground text-sm">
-                    We invest in our team's growth through training, certifications, and conferences.
+                    We invest in our team&apos;s growth through training, certifications, and conferences.
                   </p>
                 </div>
               </div>

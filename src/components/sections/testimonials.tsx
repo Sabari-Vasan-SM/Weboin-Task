@@ -23,7 +23,7 @@ const testimonials = [
     role: "Marketing Director",
     company: "E-commerce Plus",
     image: "/api/placeholder/60/60",
-    content: "Working with DigitalPro has been a game-changer for our e-commerce business. Their PPC campaigns generated over $2M in revenue while maintaining a fantastic ROAS. The team's expertise in data-driven marketing is unmatched.",
+  content: "Working with DigitalPro has been a game-changer for our e-commerce business. Their PPC campaigns generated over $2M in revenue while maintaining a fantastic ROAS. The team&apos;s expertise in data-driven marketing is unmatched.",
     rating: 5,
     results: "$2M+ revenue generated",
   },
@@ -124,8 +124,8 @@ export function Testimonials() {
             <span className="gradient-text">Say About Us</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Don't just take our word for it. Hear from the businesses we've helped 
-            achieve remarkable growth through our digital marketing strategies.
+            Don&apos;t just take our word for it. Hear from the businesses we&apos;ve helped 
+              achieve remarkable growth through our digital marketing strategies.
           </p>
         </div>
 
@@ -205,16 +205,16 @@ export function Testimonials() {
           {/* Pagination Dots */}
           {!isLoading && (
             <div className="flex justify-center space-x-2 mt-8">
-              {testimonials.map((_, index) => (
+              {testimonials.map((_, dotIndex) => (
                 <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
+                  key={dotIndex}
+                  onClick={() => setCurrentIndex(dotIndex)}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentIndex
+                    dotIndex === currentIndex
                       ? "bg-primary"
                       : "bg-border hover:bg-primary/50"
                   }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
+                  aria-label={`Go to testimonial ${dotIndex + 1}`}
                 />
               ))}
             </div>

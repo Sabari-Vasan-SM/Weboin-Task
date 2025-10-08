@@ -57,7 +57,7 @@ export function Stats() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             These metrics represent more than just numbers—they reflect the real impact 
-            we've made on businesses across various industries.
+            we&apos;ve made on businesses across various industries.
           </p>
         </div>
 
