@@ -36,12 +36,7 @@ npm run dev
 ```bash
 npm run build
 npm run start
-```
 
-### 🔍 Type-check the project  
-```bash
-npx tsc --noEmit
-```
 
 ---
 
