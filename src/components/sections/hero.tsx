@@ -59,34 +59,23 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Hero Image/Illustration */}
+          {/* Hero Video */}
           <div className="relative">
             <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
-              {/* Placeholder for hero image */}
-              <div className="absolute inset-0 gradient-bg opacity-20 rounded-2xl"></div>
+              <div className="absolute inset-0 gradient-bg opacity-20 rounded-2xl" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white/80">
-                  {/* SVG Placeholder */}
-                  <svg
-                    className="w-64 h-64 mx-auto mb-4"
-                    viewBox="0 0 300 300"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="150" cy="150" r="120" fill="currentColor" opacity="0.1" />
-                    <circle cx="150" cy="150" r="80" fill="currentColor" opacity="0.2" />
-                    <circle cx="150" cy="150" r="40" fill="currentColor" opacity="0.3" />
-                    <path
-                      d="M150 110 L170 130 L150 150 L130 130 Z"
-                      fill="currentColor"
-                      opacity="0.8"
-                    />
-                  </svg>
-                  <h3 className="text-xl font-semibold mb-2">Digital Growth</h3>
-                  <p className="text-sm opacity-80">Visualizing your success</p>
+                <div className="w-full h-full">
+                  <iframe
+                    className="w-full h-full rounded-2xl"
+                    src="https://www.youtube.com/embed/Hin8-nEFIuI?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1"
+                    title="DigitalPro Demo"
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
               </div>
-              
+
               {/* Floating Elements */}
               <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-lg p-3 glass-effect">
                 <div className="text-xs text-white font-medium">📈 +150% Growth</div>

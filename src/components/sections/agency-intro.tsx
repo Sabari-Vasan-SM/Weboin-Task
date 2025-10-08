@@ -75,25 +75,20 @@ export function AgencyIntro() {
             </div>
           </div>
           
-          {/* Image Placeholder */}
+          {/* Video Placeholder: autoplaying YouTube embed */}
           <div className="relative">
             <div className="relative h-[400px] rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 gradient-bg opacity-20 rounded-2xl"></div>
+              <div className="absolute inset-0 gradient-bg opacity-20 rounded-2xl" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white/80">
-                  <svg
-                    className="w-32 h-32 mx-auto mb-4"
-                    viewBox="0 0 200 200"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="100" cy="100" r="80" fill="currentColor" opacity="0.1" />
-                    <circle cx="100" cy="100" r="60" fill="currentColor" opacity="0.2" />
-                    <circle cx="100" cy="100" r="40" fill="currentColor" opacity="0.3" />
-                    <circle cx="100" cy="100" r="20" fill="currentColor" opacity="0.8" />
-                  </svg>
-                  <h3 className="text-lg font-semibold mb-2">Our Journey</h3>
-                  <p className="text-sm opacity-80">From startup to industry leader</p>
+                <div className="w-full h-full">
+                  <iframe
+                    className="w-full h-full rounded-2xl"
+                    src="https://www.youtube.com/embed/QsY8fnvMn6c?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1"
+                    title="Our Story - DigitalPro"
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
               </div>
             </div>
