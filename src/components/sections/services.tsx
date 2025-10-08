@@ -131,20 +131,7 @@ export function Services() {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <p className="text-muted-foreground mb-6">
-            Ready to accelerate your digital growth?
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity">
-              Get Free Consultation
-            </button>
-            <button className="px-8 py-3 border border-border text-foreground rounded-lg font-semibold hover:bg-accent transition-colors">
-              View Case Studies
-            </button>
-          </div>
-        </div>
+        {/* CTA Section removed per request */}
       </div>
     </section>
   )

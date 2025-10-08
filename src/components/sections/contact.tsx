@@ -180,18 +180,7 @@ export function Contact() {
               </div>
             </div>
 
-            {/* CTA Card */}
-            <Card className="bg-primary/5 border-primary/20">
-              <CardContent className="p-6">
-                <h4 className="font-semibold text-foreground mb-2">Free Consultation</h4>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Book a 30-minute strategy session to discuss your digital marketing goals.
-                </p>
-                <Button variant="outline" className="w-full">
-                  Schedule Consultation
-                </Button>
-              </CardContent>
-            </Card>
+            {/* CTA Card removed per request */}
           </div>
         </div>
       </div>

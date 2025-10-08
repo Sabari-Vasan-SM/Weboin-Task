@@ -77,9 +77,6 @@ export function Navbar() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
-            <Button className="gradient-bg hover:opacity-90 transition-opacity transform hover:-translate-y-0.5 hover:scale-105">
-              Get Started
-            </Button>
           </div>
 
           {/* Mobile Navigation */}
@@ -109,11 +106,7 @@ export function Navbar() {
                       <span className="absolute left-3 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-[calc(100%-1.5rem)]" />
                     </Link>
                   ))}
-                  <div className="pt-4 border-t">
-                    <Button className="w-full gradient-bg hover:opacity-90 transition-opacity">
-                      Get Started
-                    </Button>
-                  </div>
+                  <div className="pt-4 border-t" />
                 </div>
               </SheetContent>
             </Sheet>
